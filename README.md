@@ -121,7 +121,9 @@ More information is available on my web site about [my Jekyll plugins](https://w
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'jekyll_begin_end'
+group :jekyll_plugins do
+  gem 'jekyll_begin_end'
+end
 ```
 
 And then execute:
