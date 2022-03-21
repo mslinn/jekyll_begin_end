@@ -12,7 +12,7 @@ module Jekyll
     end
 
     def begins_with(text, query)
-      debug "text=#{text} query=#{query} result: #{text.start_with? query}"
+      Jekyll.debug { "text=#{text} query=#{query} result: #{text.start_with? query}" }
       text.start_with? query
     end
 
@@ -30,4 +30,5 @@ module Jekyll
   end
 end
 
+Jekyll.info { "Loaded jekyll_begin_end v#{JekyllFromToUntil::VERSION} plugin." }
 Liquid::Template.register_filter(Jekyll::StringFilter)
