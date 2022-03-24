@@ -2,10 +2,13 @@
 
 require 'liquid'
 require 'fileutils'
+require "jekyll_plugin_logger"
 require_relative '../lib/jekyll_begin_end'
 
 RSpec.describe(JekyllFromToUntil) do
   include JekyllFromToUntil
+
+  _logger = PluginMetaLogger.new_logger(self)
 
   let(:lines) do
     <<~END_OF_LINES

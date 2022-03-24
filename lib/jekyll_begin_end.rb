@@ -5,7 +5,7 @@ require_relative "jekyll_begin_end/version"
 # Jekyll filters for working with strings.
 
 module StringFilter
-  attr_accessor :logger
+  @logger = PluginMetaLogger.new_logger(self)
 
   def does_not_begin_with(text, query)
     !text.start_with? query
@@ -29,8 +29,5 @@ module StringFilter
   end
 end
 
-Jekyll::Hooks.register(:site, :after_reset) do |site|
-  PluginMetaLogger.instance.info { "Loaded jekyll_begin_end v#{JekyllFromToUntil::VERSION} plugin." }
-  StringFilter.logger = PluginLogger.new(self, site.config)
-  Liquid::Template.register_filter(Jekyll::StringFilter)
-end
+PluginMetaLogger.instance.info { "Loaded jekyll_begin_end v#{JekyllFromToUntil::VERSION} plugin." }
+Liquid::Template.register_filter(Jekyll::StringFilter)
