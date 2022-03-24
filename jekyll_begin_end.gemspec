@@ -8,12 +8,16 @@ Gem::Specification.new do |spec|
   spec.authors = ["Mike Slinn"]
   spec.bindir = "exe"
   spec.description = <<~END_DESC
-    This Jekyll plugin provides 3 filters that return portions of a multiline string: from, to and until.
-    Regular expression is used to specify matches; the simplest regular expression is a string.
+    This Jekyll plugin defines the following Jekyll filters that return portions of a string:
+    begins_with — returns true if a string starts with a given substring.
+    does_not_begin_with — returns false if a string starts with a given substring.
+    ends_with — returns true if a string end with a given substring.
+    does_not_end_with — returns false if a string end with a given substring.
+    append_suffix_if_does_not_start_with — appends a suffix to the string if the string does not start with a substring.
   END_DESC
   spec.email = ["mslinn@mslinn.com"]
   spec.files = Dir[".rubocop.yml", "LICENSE.*", "Rakefile", "{lib,spec}/**/*", "*.gemspec", "*.md"]
-  spec.homepage = "https://www.mslinn.com/blog/2020/12/28/custom-logging-in-jekyll-plugins.html"
+  spec.homepage = "https://www.mslinn.com/blog/2020/10/03/jekyll-plugins.html#begin_end"
   spec.license = "MIT"
   spec.metadata = {
     "allowed_push_host" => "https://rubygems.org",
@@ -25,19 +29,17 @@ Gem::Specification.new do |spec|
   spec.name = "jekyll_begin_end"
   spec.require_paths = ["lib"]
   spec.required_ruby_version = ">= 2.6.0"
-  spec.summary = "This Jekyll plugin provides 3 filters that return portions of a multiline string: from, to and until."
+  spec.summary = "This Jekyll plugin provides 5 filters that return portions of a string: begins_with, " \
+                 "does_not_begin_with, ends_with, does_not_end_with and append_suffix_if_does_not_start_with."
+  spec.test_files = spec.files.grep(%r!^(test|spec|features)/!)
   spec.version = JekyllFromToUntil::VERSION
 
   spec.add_dependency "jekyll", ">= 3.5.0"
   spec.add_dependency "jekyll_plugin_logger"
 
-  spec.add_development_dependency "bundler"
   spec.add_development_dependency "debase"
-  spec.add_development_dependency "rake"
-  spec.add_development_dependency "rspec", "~> 3.0"
-  spec.add_development_dependency "rubocop"
-  spec.add_development_dependency "rubocop-jekyll"
-  spec.add_development_dependency "rubocop-rake"
-  spec.add_development_dependency "rubocop-rspec"
+  # spec.add_development_dependency "rubocop-jekyll"
+  # spec.add_development_dependency "rubocop-rake"
+  # spec.add_development_dependency "rubocop-rspec"
   spec.add_development_dependency "ruby-debug-ide"
 end
