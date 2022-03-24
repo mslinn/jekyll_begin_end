@@ -7,12 +7,14 @@ require_relative "jekyll_begin_end/version"
 
 module Jekyll
   module StringFilter
+    $logger = PluginLogger.new(self)
+
     def does_not_begin_with(text, query)
       !text.start_with? query
     end
 
     def begins_with(text, query)
-      Jekyll.debug { "text=#{text} query=#{query} result: #{text.start_with? query}" }
+      $logger.debug { "text=#{text} query=#{query} result: #{text.start_with? query}" }
       text.start_with? query
     end
 
@@ -30,5 +32,5 @@ module Jekyll
   end
 end
 
-Jekyll.info { "Loaded jekyll_begin_end v#{JekyllFromToUntil::VERSION} plugin." }
+PluginMetaLogger.instance.info { "Loaded jekyll_begin_end v#{JekyllFromToUntil::VERSION} plugin." }
 Liquid::Template.register_filter(Jekyll::StringFilter)
