@@ -6,7 +6,7 @@ require_relative "jekyll_begin_end/version"
 # Jekyll filters for working with strings.
 
 module StringFilter
-  @logger = PluginMetaLogger.new_logger(self)
+  @logger = PluginMetaLogger.instance.new_logger(self)
 
   def does_not_begin_with(text, query)
     !text.start_with? query
