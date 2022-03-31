@@ -32,7 +32,7 @@ Gem::Specification.new do |spec|
   spec.summary = "This Jekyll plugin provides 5 filters that return portions of a string: begins_with, " \
                  "does_not_begin_with, ends_with, does_not_end_with and append_suffix_if_does_not_start_with."
   spec.test_files = spec.files.grep(%r!^(test|spec|features)/!)
-  spec.version = JekyllFromToUntil::VERSION
+  spec.version = JekyllBeginEndVersion::VERSION
 
   spec.add_dependency "jekyll", ">= 3.5.0"
   spec.add_dependency "jekyll_plugin_logger"

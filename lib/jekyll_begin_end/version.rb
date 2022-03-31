@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
-module JekyllFromToUntil
-  VERSION = "1.0.0"
+module JekyllBeginEndVersion
+  VERSION = "1.0.1"
 end
