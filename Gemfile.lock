@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    jekyll_begin_end (1.0.2)
+    jekyll_begin_end (1.0.1)
       jekyll (>= 3.5.0)
       jekyll_plugin_logger
 
