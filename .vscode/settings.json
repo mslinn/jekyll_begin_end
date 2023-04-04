@@ -1,4 +1,5 @@
 {
-  "ruby.rubocop.configFilePath": ".rubocop.yml",
-  "ruby.rubocop.useBundler": true
+  "ruby.rubocop.configFilePath": "${env:jekyll_begin_end}/.rubocop.yml",
+  "ruby.rubocop.useBundler": true,
+  "ruby.rubocop.executePath": "${env:jekyll_begin_end}/exe/"
 }

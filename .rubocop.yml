@@ -1,13 +1,27 @@
-require: rubocop-jekyll
-inherit_gem:
-  rubocop-jekyll: .rubocop.yml
+require:
+ - rubocop-rake
+ - rubocop-rspec
 
 AllCops:
   Exclude:
-      - vendor/**/*
-      - Gemfile*
+    - exe/**/*
+    - vendor/**/*
+    - Gemfile*
   NewCops: enable
   TargetRubyVersion: 2.6
+
+Gemspec/DeprecatedAttributeAssignment:
+  Enabled: false
+
+Gemspec/RequireMFA:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+Layout/HashAlignment:
+  EnforcedColonStyle: table
+  EnforcedHashRocketStyle: table
 
 Layout/LineLength:
   Max: 150
@@ -19,6 +33,21 @@ Layout/MultilineOperationIndentation:
   Enabled: false
 
 Metrics/BlockLength:
+  Exclude:
+    - jekyll_begin_end.gemspec
+  Max: 40
+
+Metrics/MethodLength:
+  Max: 30
+
+Naming/FileName:
+  Exclude:
+    - Rakefile
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
   Enabled: false
 
 Style/PercentLiteralDelimiters:
@@ -32,3 +61,10 @@ Style/StringLiterals:
 
 Style/StringLiteralsInInterpolation:
   Enabled: false
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: comma
+
+RSpec/FilePath:
+  IgnoreMethods: true
+  SpecSuffixOnly: true

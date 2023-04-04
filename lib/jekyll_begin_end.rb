@@ -1,8 +1,6 @@
-# frozen_string_literal: true
-
-require "jekyll"
-require "jekyll_plugin_logger"
-require_relative "jekyll_begin_end/version"
+require 'jekyll'
+require 'jekyll_plugin_logger'
+require_relative 'jekyll_begin_end/version'
 
 # Jekyll filters for working with strings.
 
