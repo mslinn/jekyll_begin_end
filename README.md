@@ -2,13 +2,29 @@
 [![Gem Version](https://badge.fury.io/rb/jekyll_begin_end.svg)](https://badge.fury.io/rb/jekyll_begin_end)
 ===========
 
-Defines the following Jekyll filters:
+This Jekyll plugin defines the following filters:
 
  * `begins_with` — returns `true` if a string starts with a given substring.
  * `does_not_begin_with` — returns `false` if a string starts with a given substring.
  * `ends_with` — returns `true` if a string end with a given substring.
  * `does_not_end_with` — returns `false` if a string end with a given substring.
  * `append_suffix_if_does_not_start_with` — appends a suffix to the string if the string does not start with a substring.
+
+
+## Installation
+
+Add this line to your Jekyll project's `Gemfile`:
+
+```ruby
+group :jekyll_plugins do
+  gem 'jekyll_begin_end'
+end
+```
+
+And then execute:
+
+    $ bundle
+
 
 ## Syntax
 
@@ -113,42 +129,18 @@ The following is generated. Note that the suffix s?v=1612879301 in only applied 
 
 
 ### Additional Information
-More information is available on my web site about [my Jekyll plugins](https://www.mslinn.com/blog/2020/10/03/jekyll-plugins.html).
-
-
-## Installation
-
-Add this line to your application's Gemfile:
-
-```ruby
-group :jekyll_plugins do
-  gem 'jekyll_begin_end'
-end
-```
-
-And then execute:
-
-    $ bundle install
-
-Or install it yourself as:
-
-    $ gem install jekyll_begin_end
+More information is available about [my Jekyll plugins](https://www.mslinn.com/jekyll/3000-jekyll-plugins.html#begin_end).
 
 
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies.
 
-You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+Then you can run `bin/console` for an interactive prompt that will allow you to experiment using `irb`.
 
 
 ### Build and Install Locally
 To build and install this gem onto your local machine, run:
-```shell
-$ rake install:local
-```
-
-The following also does the same thing:
 ```shell
 $ bundle exec rake install
 ```
@@ -170,11 +162,12 @@ jekyll_begin_end (1.0.0)
 ```
 
 
-### Build and Push to RubyGems
+### Release
 To release a new version,
   1. Update the version number in `version.rb`.
-  2. Commit all changes to git; if you don't the next step might fail with an unexplainable error message.
-  3. Run the following:
+  2. Describe the changes in `CHANGELOG.md`.
+  3. Commit all changes to git; if you don't the next step might fail with an unexplainable error message.
+  4. Run the following:
      ```shell
      $ bundle exec rake release
      ```
@@ -182,7 +175,9 @@ To release a new version,
      and pushes the new `.gem` file to [RubyGems.org](https://rubygems.org).
 
 
+
 ## Contributing
+Bug reports and pull requests are welcome on GitHub at https://github.com/mslinn/jekyll_begin_end.
 
 1. Fork the project
 2. Create a descriptively named feature branch
@@ -190,6 +185,6 @@ To release a new version,
 4. Submit a pull request
 
 
-## License
 
+## License
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
