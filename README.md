@@ -4,11 +4,11 @@
 
 This Jekyll plugin defines the following filters:
 
- * `begins_with` — returns `true` if a string starts with a given substring.
- * `does_not_begin_with` — returns `false` if a string starts with a given substring.
- * `ends_with` — returns `true` if a string end with a given substring.
- * `does_not_end_with` — returns `false` if a string end with a given substring.
- * `append_suffix_if_does_not_start_with` — appends a suffix to the string if the string does not start with a substring.
+ * `begins_with` — returns `true` if a string starts with the given substring.
+ * `does_not_begin_with` — returns `false` if a string starts with the given substring.
+ * `ends_with` — returns `true` if a string end with the given substring.
+ * `does_not_end_with` — returns `false` if a string ends with the given substring.
+ * `append_suffix_if_does_not_start_with` — appends a suffix to the given string if the string does not start with a given substring.
 
 
 ## Installation
