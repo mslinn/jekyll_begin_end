@@ -3,7 +3,7 @@ require 'fileutils'
 require_relative '../lib/jekyll_begin_end'
 
 RSpec.describe(JekyllBeginEnd) do
-  include JekyllBeginEnd
+  include described_class
 
   let(:gitignore) do
     <<~END_OF_LINES
