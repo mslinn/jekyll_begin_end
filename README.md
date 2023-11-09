@@ -28,7 +28,13 @@ $ bundle
 
 ## Syntax
 
-:warning: Important: the name of each of these filters must be followed by a colon (:). If you fail to do that an error will be generated and the Jekyll site building process will halt. The error message looks something like this: `Liquid Warning: Liquid syntax error (line 285): Expected end_of_string but found string in "{{ lines | begins_with 'blah' | xml_escape }}" in /some_directory/some_files.html Liquid Exception: Liquid error (line 285): wrong number of arguments (given 1, expected 2) in /some_directory/some_file.html Error: Liquid error (line 285): wrong number of arguments (given 1, expected 2)`
+:warning: Important: the name of each of these filters must be followed by a colon (:).
+If you fail to do that an error will be generated and the Jekyll site building process will halt.
+The error message looks something like this:
+`Liquid Warning: Liquid syntax error (line 285): Expected end_of_string but found string in
+"{{ lines | begins_with 'blah' | xml_escape }}" in /some_directory/some_files.html Liquid Exception:
+Liquid error (line 285): wrong number of arguments (given 1, expected 2) in /some_directory/some_file.html
+Error: Liquid error (line 285): wrong number of arguments (given 1, expected 2)`
 
 
 ### `begins_with`
