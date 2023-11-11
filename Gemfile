@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 source 'https://rubygems.org'
 
 # Gem dependencies are specified in jekyll_begin_end.gemspec
