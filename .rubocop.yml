@@ -1,10 +1,14 @@
 require:
- - rubocop-rake
- - rubocop-rspec
+  # - rubocop-jekyll
+  - rubocop-md
+  - rubocop-performance
+  - rubocop-rake
+  - rubocop-rspec
 
 AllCops:
   Exclude:
     - binstub/**/*
+    - demo/_site/*
     - vendor/**/*
     - Gemfile*
   NewCops: enable
@@ -18,9 +22,6 @@ Gemspec/RequireMFA:
 Gemspec/RequiredRubyVersion:
   Enabled: false
 
-RSpec/MultipleExpectations:
-  Enabled: false
-
 Layout/HashAlignment:
   EnforcedColonStyle: table
   EnforcedHashRocketStyle: table
@@ -28,23 +29,46 @@ Layout/HashAlignment:
 Layout/LineLength:
   Max: 150
 
-Layout/MultilineMethodCallIndentation:
-  Enabled: false
-
-Layout/MultilineOperationIndentation:
-  Enabled: false
+Metrics/AbcSize:
+  Max: 55
 
 Metrics/BlockLength:
   Exclude:
-    - jekyll_begin_end.gemspec
-  Max: 40
+    - jekyll_plugin_support.gemspec
+  Max: 30
+
+Metrics/CyclomaticComplexity:
+  Max: 25
 
 Metrics/MethodLength:
-  Max: 30
+  Max: 50
+
+Metrics/PerceivedComplexity:
+  Max: 25
 
 Naming/FileName:
   Exclude:
     - Rakefile
+    - "*.md"
+
+RSpec/ExampleLength:
+  Max: 30
+
+RSpec/SpecFilePathFormat:
+  Enabled: false
+  IgnoreMethods: true
+
+RSpec/SpecFilePathSuffix:
+  Enabled: false
+
+RSpec/IndexedLet:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Max: 15
+
+Style/ClassVars:
+  Enabled: false
 
 Style/Documentation:
   Enabled: false
@@ -52,21 +76,8 @@ Style/Documentation:
 Style/FrozenStringLiteralComment:
   Enabled: false
 
-Style/PercentLiteralDelimiters:
-  Enabled: false
-
-Style/RegexpLiteral:
-  Enabled: false
-
-Style/StringLiterals:
-  Enabled: false
-
-Style/StringLiteralsInInterpolation:
+Style/StringConcatenation:
   Enabled: false
 
 Style/TrailingCommaInHashLiteral:
   EnforcedStyleForMultiline: comma
-
-RSpec/FilePath:
-  IgnoreMethods: true
-  SpecSuffixOnly: true
