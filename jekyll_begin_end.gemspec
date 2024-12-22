@@ -3,8 +3,8 @@ require_relative 'lib/jekyll_begin_end/version'
 Gem::Specification.new do |spec|
   github = 'https://github.com/mslinn/jekyll_begin_end'
 
-  spec.authors = ['Mike Slinn']
-  spec.bindir = 'exe'
+  spec.authors     = ['Mike Slinn']
+  spec.bindir      = 'exe'
   spec.description = <<~END_DESC
     This Jekyll plugin defines the following Jekyll filters that return portions of a string:
     begins_with — returns true if a string starts with a given substring.
@@ -13,10 +13,10 @@ Gem::Specification.new do |spec|
     does_not_end_with — returns false if a string end with a given substring.
     append_suffix_if_does_not_start_with — appends a suffix to the string if the string does not start with a substring.
   END_DESC
-  spec.email = ['mslinn@mslinn.com']
-  spec.files = Dir['.rubocop.yml', 'LICENSE.*', 'Rakefile', '{lib,spec}/**/*', '*.gemspec', '*.md']
+  spec.email    = ['mslinn@mslinn.com']
+  spec.files    = Dir['.rubocop.yml', 'LICENSE.*', 'Rakefile', '{lib,spec}/**/*', '*.gemspec', '*.md']
   spec.homepage = 'https://www.mslinn.com/jekyll_plugins/jekyll_begin_end.html'
-  spec.license = 'MIT'
+  spec.license  = 'MIT'
   spec.metadata = {
     'allowed_push_host' => 'https://rubygems.org',
     'bug_tracker_uri'   => "#{github}/issues",
@@ -24,13 +24,16 @@ Gem::Specification.new do |spec|
     'homepage_uri'      => spec.homepage,
     'source_code_uri'   => github,
   }
-  spec.name = 'jekyll_begin_end'
-  spec.require_paths = ['lib']
+  spec.name                  = 'jekyll_begin_end'
+  spec.platform              = Gem::Platform::RUBY
+  spec.require_paths         = ['lib']
   spec.required_ruby_version = '>= 2.6.0'
-  spec.summary = 'This Jekyll plugin provides 5 filters that return portions of a string: begins_with, ' \
-                 'does_not_begin_with, ends_with, does_not_end_with and append_suffix_if_does_not_start_with.'
+  spec.summary               = <<~END_DESC
+    This Jekyll plugin provides 5 filters that return portions of a string: begins_with, 
+    does_not_begin_with, ends_with, does_not_end_with and append_suffix_if_does_not_start_with.
+  END_DESC
   spec.test_files = spec.files.grep(%r!^(test|spec|features)/!)
-  spec.version = JekyllBeginEndVersion::VERSION
+  spec.version    = JekyllBeginEndVersion::VERSION
 
   spec.add_dependency 'jekyll', '>= 3.5.0'
   spec.add_dependency 'jekyll_plugin_logger'
